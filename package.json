@@ -1,0 +1,25 @@
+{
+  "name": "formatdate-ts",
+  "version": "1.0.0",
+  "description": "formate date by string",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npx tsc -p .",
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gina10086/FormatDate.git"
+  },
+  "author": "gina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gina10086/FormatDate/issues"
+  },
+  "type":"module",
+  "homepage": "https://github.com/gina10086/FormatDate#readme",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
