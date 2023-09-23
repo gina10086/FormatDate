@@ -11,8 +11,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class FormatSetting {
     constructor(...lans) {
         this.weekLans = {
-            zh: Array.from('一二三四五六日').map(v => '周' + v),
-            en: ['Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.', 'Sun.']
+            zh: Array.from('日一二三四五六').map(v => '周' + v),
+            en: ['Sun.', 'Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.']
         };
         this.format = (date, formatStr, weekLan = 'zh') => {
             const currentDate = new Date(date);
