@@ -5,16 +5,17 @@
  * @Author: Gina
  * @Date: 2023-09-06 15:03:15
  * @LastEditors: Gina
- * @LastEditTime: 2023-09-06 22:16:01
+ * @LastEditTime: 2023-09-24 01:18:30
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 class FormatSetting {
     constructor(...lans) {
         this.weekLans = {
             zh: Array.from('日一二三四五六').map(v => '周' + v),
-            en: ['Sun.', 'Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.']
+            en: ['Sun.','Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.']
         };
         this.format = (date, formatStr, weekLan = 'zh') => {
+            var _a;
             const currentDate = new Date(date);
             if (isNaN(currentDate.getDay()))
                 return date;
@@ -28,13 +29,12 @@ class FormatSetting {
                 minute: '',
                 second: '',
             };
-            formater.split(' ')
-                .forEach(str => {
-                const regEx = /[@\-.:年月日时分秒周]/g;
-                str
-                    .split(regEx)
-                    .forEach((type) => Object.assign(__Date, this.setAttr(type, currentDate)));
-            });
+            const M = formater.match(/M+/g);
+            M === null || M === void 0 ? void 0 : M.forEach((type) => Object.assign(__Date, this.setAttr(type, currentDate)));
+            (_a = formater
+                .replace(/M+/g, '')
+                .toLowerCase()
+                .match(/[m|y|d|w|h|s]+/g)) === null || _a === void 0 ? void 0 : _a.forEach((type) => Object.assign(__Date, this.setAttr(type, currentDate)));
             const result = formatStr
                 .replace(/m+/g, __Date.minute)
                 .replace(/M+/g, __Date.month)

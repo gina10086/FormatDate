@@ -1,10 +1,10 @@
-interface Week {
+export type Week = {
     name: string;
     value: string[];
-}
-interface WeekLans {
+};
+export type WeekLans = {
     [attr: string]: string[];
-}
+};
 declare class FormatSetting {
     weekLans: WeekLans;
     constructor(...lans: Week[]);
