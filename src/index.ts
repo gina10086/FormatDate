@@ -4,7 +4,7 @@
  * @Author: Gina
  * @Date: 2023-09-06 15:03:15
  * @LastEditors: Gina
- * @LastEditTime: 2023-09-07 02:36:08
+ * @LastEditTime: 2023-09-24 01:18:58
  */
 
 
@@ -24,7 +24,7 @@ class FormatSetting {
         if(lans) this.addWeekLans(...lans);
         return this
     }
-    format = (date: Date, formatStr:string, weekLan:string = 'zh') => {
+    format = (date: Date, formatStr:string, weekLan:string = 'zh'):string => {
         const currentDate = new Date(date)
         if(isNaN(currentDate.getDay())) return date;
         const formater = formatStr.replace(/\s+/g, ' ')
