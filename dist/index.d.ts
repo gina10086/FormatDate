@@ -8,7 +8,7 @@ export type WeekLans = {
 declare class FormatSetting {
     weekLans: WeekLans;
     constructor(...lans: Week[]);
-    format: (date: Date, formatStr: string, weekLan?: string) => string | Date;
+    format: (date: Date, formatStr: string, weekLan?: string) => string;
     setAttr: (type: string, date: Date) => {
         year: string;
         month?: undefined;

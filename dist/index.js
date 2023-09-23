@@ -5,20 +5,20 @@
  * @Author: Gina
  * @Date: 2023-09-06 15:03:15
  * @LastEditors: Gina
- * @LastEditTime: 2023-09-24 01:18:30
+ * @LastEditTime: 2023-09-24 01:33:57
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 class FormatSetting {
     constructor(...lans) {
         this.weekLans = {
             zh: Array.from('日一二三四五六').map(v => '周' + v),
-            en: ['Sun.','Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.']
+            en: ['Sun.', 'Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.']
         };
         this.format = (date, formatStr, weekLan = 'zh') => {
             var _a;
             const currentDate = new Date(date);
             if (isNaN(currentDate.getDay()))
-                return date;
+                return '日期格式错误';
             const formater = formatStr.replace(/\s+/g, ' ');
             const __Date = {
                 year: '',
@@ -41,7 +41,7 @@ class FormatSetting {
                 .toLowerCase()
                 .replace(/y+/g, __Date.year)
                 .replace(/d+/g, __Date.day)
-                .replace(/w+/g, this.weekLans[weekLan][Number(__Date.week) - 1])
+                .replace(/w+/g, this.weekLans[weekLan][Number(__Date.week)])
                 .replace(/h+/g, __Date.hour)
                 .replace(/s+/g, __Date.second);
             return result;

@@ -4,7 +4,7 @@
  * @Author: Gina
  * @Date: 2023-09-06 15:03:15
  * @LastEditors: Gina
- * @LastEditTime: 2023-09-24 01:18:58
+ * @LastEditTime: 2023-09-24 01:33:57
  */
 
 
@@ -26,7 +26,7 @@ class FormatSetting {
     }
     format = (date: Date, formatStr:string, weekLan:string = 'zh'):string => {
         const currentDate = new Date(date)
-        if(isNaN(currentDate.getDay())) return date;
+        if(isNaN(currentDate.getDay())) return '日期格式错误';
         const formater = formatStr.replace(/\s+/g, ' ')
         const __Date = {
             year: '',
@@ -50,7 +50,7 @@ class FormatSetting {
             .toLowerCase()
             .replace(/y+/g, __Date.year)
             .replace(/d+/g, __Date.day)
-            .replace(/w+/g, this.weekLans[weekLan as keyof typeof this.weekLans ][Number(__Date.week) - 1])
+            .replace(/w+/g, this.weekLans[weekLan as keyof typeof this.weekLans ][Number(__Date.week)])
             .replace(/h+/g, __Date.hour)
             .replace(/s+/g, __Date.second)
         
