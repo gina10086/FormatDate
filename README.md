@@ -39,7 +39,7 @@ formatSetting.format(d, 'yyyy年M月dd w hh时mm分ss秒')
 
 
 ```javascript
-new formatSetting({attr: 'zh', value: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']}, {'en', value: ['Mon.','Tues.','Wed.','Thur.','Fri.','Sat.','Sun.']})
+new formatSetting({attr: 'zh', value: ['周日','周一', '周二', '周三', '周四', '周五', '周六']}, {'en', value: ['Sun.','Mon.','Tues.','Wed.','Thur.','Fri.','Sat.']})
 ```
 
 | 参数名  | 备注                                                                 |
