@@ -17,8 +17,8 @@ export type WeekLans = {
 }
 class FormatSetting {
     weekLans:WeekLans = {
-        zh: Array.from('一二三四五六日').map(v => '周' + v),
-        en: ['Mon.','Tues.','Wed.','Thur.','Fri.','Sat.','Sun.']
+        zh: Array.from('日一二三四五六').map(v => '周' + v),
+        en: ['Sun.','Mon.','Tues.','Wed.','Thur.','Fri.','Sat.']
     }
     constructor(...lans:Week[]) {
         if(lans) this.addWeekLans(...lans);
